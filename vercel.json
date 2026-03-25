@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist/public",
+  "env": {
+    "VITE_SUPABASE_URL": "@vite_supabase_url",
+    "VITE_SUPABASE_KEY": "@vite_supabase_key",
+    "OPENAI_API_KEY": "@openai_api_key"
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "dist/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dist/public/index.html"
+    }
+  ]
+}
